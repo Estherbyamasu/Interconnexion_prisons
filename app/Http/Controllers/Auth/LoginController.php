@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -36,5 +37,14 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    public function redirectTo (){
+        if(Auth::User()->roles->pluck('name')->contains('admin')){
+                return '/admin/users';
+        } elseif (Auth::User()->roles->pluck('name')->contains('utilisateur')){
+            return '/admin/users';
+        }else{
+            return '/home';
+        }
     }
 }

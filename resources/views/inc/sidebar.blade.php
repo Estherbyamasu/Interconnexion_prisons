@@ -115,7 +115,18 @@
 					
 					</ul>
 			</li>
-            <li class="active"><a href="{{ url('users')}}"><em class="fa fa-users">&nbsp;</em> Utilisateurs</a></li>
+
+            <li class="parent "><a data-toggle="collapse" href="#sub-item-4">
+				<em class="fa fa-align-justify">&nbsp;</em> Utilisateurs<span data-toggle="collapse" href="#sub-item-4" class="icon pull-right"><em class="fa fa-plus"></em></span>
+				</a>
+				<ul class="children collapse" id="sub-item-4">
+					@can('manage-users')
+                    <li class="active"><a href="{{route('admin.users.index')}}" class="dropdown-item"><span class="fa fa-users">&nbsp;</span>Liste des utilisateurs</a></li>
+					@endcan
+					</ul>
+			</li>
+
+           
           </ul>
           
           <!-- sidebar menu end-->
