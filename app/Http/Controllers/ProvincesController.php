@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Commune;
 use App\Province;
 use Illuminate\Http\Request;
 
