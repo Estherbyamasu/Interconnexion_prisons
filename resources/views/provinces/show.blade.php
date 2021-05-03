@@ -42,7 +42,7 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Nouveau de Commune
 </button>
-                <div class="panel-heading">Liste des communes appartenant dans la province {{ $province_communes->nom_province}}</div>
+                <div class="panel-heading">Liste des communes appartenant dans la province {{ $province_commune->nom_province}}</div>
                 
             <div class="modal-content">
       <!--Modal cascading tabs-->
