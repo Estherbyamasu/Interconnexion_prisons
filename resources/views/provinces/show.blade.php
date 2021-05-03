@@ -96,7 +96,7 @@
                
                <div class="panel-body">
                    <div class="col-md-8">
-                       <form role="form" action="/provincees/storecommune" method="POST">
+                       <form role="form" action="/provinces/storecommune" method="POST">
                            @csrf
 
 
@@ -106,7 +106,7 @@
                    
                              
                             <div class="row">
-                           "> 
+                           
                             <div class="form-group">
                             <label for=""> Nom commune</label>
                             <input type="float" style="background:gray; color:white" name="nom_commune" id="" class="form-control"

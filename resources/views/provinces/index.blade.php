@@ -87,15 +87,7 @@
                            @csrf
 
 
-                           <!-- <div class="form-group">
-						<label>Nom_compte</label> 
-						 <input type="text" name="nom_categorie_compte" class="form-control" 
-                          placeholder="Saisir le nom categorie_compte" 
-						class="form-control" class="@error('nom_categorie_compte') is-danger @enderror">
-						@error('nom_categorie_compte')
-						<div class="alert alert-danger">{{$message}}</div>
-						@enderror
-					</div> -->
+                        
 
 
                            <div class="form-group">
