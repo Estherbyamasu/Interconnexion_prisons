@@ -63,7 +63,7 @@
                             <tbody>
                             @foreach($province_commune->communes as $commune)
                             <tr>
-                            <td>{{$compte->id}}</td>
+                            <td>{{$commune->id}}</td>
                             
                             <td>{{$commune->nom_commune}}</td>
                             <td>{{$commune->superficie}}  
