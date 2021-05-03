@@ -49,7 +49,7 @@
       <div class="modal-body text-center mb-1">
                         
       <table  id="example1" class="table table-bordered table-hover table-striped">
-                        <legend>  liste des communs </legend>
+                        <legend>  liste des communes </legend>
                             <thead>
                                 <tr>
                                 <th>ID</th>
@@ -74,7 +74,7 @@
                                         
                                         <form action="communes/destroy/{{ $commune->id}}" method="post" class="form-inline">
                                         @csrf
-                                <button type="submit" onclick="return confirm('Voulez vs vraiment supprimer cette commuune ?')" class="glyphicon glyphicon-delite glyphicon-trash   btn btn-danger">Delete</button>
+                                <button type="submit" onclick="return confirm('Voulez vs vraiment supprimer cette commune ?')" class="glyphicon glyphicon-delite glyphicon-trash   btn btn-danger">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

@@ -33,4 +33,5 @@ Route::get('provinces/edit/{province}','ProvincesController@edit');
 Route::get('provinces/show/{province}','ProvincesController@show');
 Route::put('provinces/{province}','ProvincesController@update');
 Route::post('provinces/destroy/{province}','ProvincesController@destroy');
+Route::post('provinces/storecommune','ProvincesController@storecommune');
 // Route::resourse('provinces','ProvincesController');
