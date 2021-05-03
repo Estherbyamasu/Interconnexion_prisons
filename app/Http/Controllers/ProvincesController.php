@@ -54,37 +54,37 @@ class ProvincesController extends Controller
     
     }
 
-    // public function storecommune(Request $request){ 
-    //     $request->validate([
-    //         'province_id' =>'required',
+    public function storecommune(Request $request){ 
+        $request->validate([
+            'province_id' =>'required',
             
-    //         'nom_commune' =>'required',
-    //         'superficie' =>'required',
+            'nom_commune' =>'required',
+            'superficie' =>'required',
            
             
     
-    //     ]);
-    //     $commune= new Commune();
-    //     $commune->province_id= $request->province_id;
+        ]);
+        $commune= new Commune();
+        $commune->province_id= $request->province_id;
        
-    //     $commune->nom_commune= $request->nom_commune;
-    //     $commune->superficie= $request->superficie;
+        $commune->nom_commune= $request->nom_commune;
+        $commune->superficie= $request->superficie;
      
-    //     $commune->save();
-    //     return $this->show($request->province_id);
-    // }
-    //     /**
-    //      * Display the specified resource.
-    //      *
-    //      * @param  int  $id
-    //      * @return \Illuminate\Http\Response
-    //      */
-    //     public function show($id)
-    //     {
-    //         //
-    //         $province_commune = Province::with(['communes'])->find($id);
-    //         return view('provinces.show',compact('province_communes'));
-    //     }
+        $commune->save();
+        return $this->show($request->province_id);
+    }
+        /**
+         * Display the specified resource.
+         *
+         * @param  int  $id
+         * @return \Illuminate\Http\Response
+         */
+        public function show($id)
+        {
+            //
+            $province_commune = Province::with(['communes'])->find($id);
+            return view('provinces.show',compact('province_communes'));
+        }
     
       
     
