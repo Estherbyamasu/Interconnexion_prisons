@@ -26,3 +26,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('users','UsersController');
 });
+Route::get('provinces','ProvincesController@index');
+Route::get('provinces/create','ProvincesController@create');
+Route::post('provinces','ProvincesController@store');
+Route::get('provinces/edit/{province}','ProvincesController@edit');
+Route::get('provinces/show/{province}','ProvincesController@show');
+Route::put('provinces/{province}','ProvincesController@update');
+Route::post('provinces/destroy/{province}','ProvincesController@destroy');
+// Route::resourse('provinces','ProvincesController');
