@@ -39,9 +39,9 @@
             <div class="panel panel-default">
           
             <div class="panel-body">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Nouveau de Commune
-</button>
+</button> --}}
                 <div class="panel-heading">Liste des communes appartenant dans la province {{ $province_commune->nom_province}}</div>
                 
             <div class="modal-content">
@@ -82,7 +82,7 @@
                             </tbody>
 
                         </table>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -138,7 +138,7 @@
                    </div>
                </div>
                
-               </div>
+               </div> --}}
                </div>
       </div>
      
