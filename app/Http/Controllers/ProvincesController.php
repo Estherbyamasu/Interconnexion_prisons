@@ -83,7 +83,7 @@ class ProvincesController extends Controller
         {
             //
             $province_commune = Province::with(['communes'])->find($id);
-            return view('provinces.show',compact('province_communes'));
+            return view('provinces.show',compact('province_commune'));
         }
     
       
