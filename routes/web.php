@@ -26,3 +26,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('users','UsersController');
 });
+
+Route::get('sercives','SercivesController@index');
+Route::get('sercives/create','SercivesController@create');
+Route::post('sercives','SercivesController@store');
+Route::get('sercives/edit/{sercive}','SercivesController@edit');
+Route::get('sercives/show/{sercive}','SercivesController@show');
+Route::put('sercives/{sercive}','SercivesController@update');
+Route::post('sercives/destroy/{sercive}','SercivesController@destroy');
