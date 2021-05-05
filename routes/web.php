@@ -34,3 +34,12 @@ Route::get('sercives/edit/{sercive}','SercivesController@edit');
 Route::get('sercives/show/{sercive}','SercivesController@show');
 Route::put('sercives/{sercive}','SercivesController@update');
 Route::post('sercives/destroy/{sercive}','SercivesController@destroy');
+
+
+Route::get('fonctions','FonctionsController@index');
+Route::get('fonctions/create','FonctionsController@create');
+Route::post('fonctions','FonctionsController@store');
+Route::get('fonctions/edit/{fonction}','FonctionsController@edit');
+Route::put('fonctions/{fonction}','FonctionsController@update');
+Route::post('fonctions/destroy/{fonction}','FonctionsController@destroy');
+
