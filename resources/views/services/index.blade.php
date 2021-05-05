@@ -46,10 +46,10 @@
                                 @foreach($services as $service)
                                 <tr>
                                     <td>{{ $service->id }}</td>
-                                    <td>{{ $service->numero_service }}</td>
+                                    <td>{{ $service->nom_service }}</td>
                                     <td>
                                         <a href="services/edit/{{ $service->id }}" class="glyphicon glyphicon-edit   btn btn-info">edit</a>
-                                        <a href="services/show/{{$service->id}}" class="glyphicon glyphicon-play btn btn-primary" >Attribution de caisse</a>
+                                        <a href="services/show/{{$service->id}}" class="glyphicon glyphicon-play btn btn-primary" >Attribution des fonctions</a>
                                         <form action="services/destroy/{{ $service->id }}" method="post" class="form-inline">
                                         @csrf
                                 <button type="submit" onclick="return confirm('Voulez vs vraiment supprimer cette service ?')"
@@ -69,7 +69,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLabel">L'ajout des guichets</h2>
+        <h2 class="modal-title" id="exampleModalLabel">L'ajout des services</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -79,12 +79,12 @@
                
                <div class="panel-body">
                    <div class="col-md-8">
-                       <form role="form" action="{{ url('guichets') }}" method="post">
+                       <form role="form" action="{{ url('services') }}" method="post">
                            @csrf
                            <div class="form-group">
-                               <label>Num guichet:</label>
-                               <input type="text" name="numero_guichet" class="form-control"
-                                placeholder="Entrez le nom d'une guichet" required>
+                               <label>Nom service:</label>
+                               <input type="text" name="nom_service" class="form-control"
+                                placeholder="Entrez le nom d'une service" required>
                            </div>
                            <div class="modal-footer">
       <div class="row">
