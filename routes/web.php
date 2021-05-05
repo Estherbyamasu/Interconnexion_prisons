@@ -27,13 +27,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
     Route::resource('users','UsersController');
 });
 
-Route::get('sercives','SercivesController@index');
-Route::get('sercives/create','SercivesController@create');
-Route::post('sercives','SercivesController@store');
-Route::get('sercives/edit/{sercive}','SercivesController@edit');
-Route::get('sercives/show/{sercive}','SercivesController@show');
-Route::put('sercives/{sercive}','SercivesController@update');
-Route::post('sercives/destroy/{sercive}','SercivesController@destroy');
 
 
 Route::get('fonctions','FonctionsController@index');
@@ -42,4 +35,13 @@ Route::post('fonctions','FonctionsController@store');
 Route::get('fonctions/edit/{fonction}','FonctionsController@edit');
 Route::put('fonctions/{fonction}','FonctionsController@update');
 Route::post('fonctions/destroy/{fonction}','FonctionsController@destroy');
+
+
+Route::get('services','ServicesController@index');
+Route::get('services/create','ServicesController@create');
+Route::post('services','ServicesController@store');
+Route::get('services/edit/{service}','ServicesController@edit');
+Route::get('services/show/{service}','ServicesController@show');
+Route::put('services/{service}','ServicesController@update');
+Route::post('services/destroy/{service}','ServicesController@destroy');
 
