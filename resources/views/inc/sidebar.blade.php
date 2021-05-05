@@ -87,13 +87,13 @@
 					<li><a class="" href="{{ url('prisonniers')}}">
 						<span class="fa fa-users">&nbsp;</span> Prisonniers
 					</a></li>
-					<li><a class="" href="{{ url('occupations')}}">
-						<span class="fa fa-list-alt">&nbsp;</span> Occupations
+					<li><a class="" href="{{ url('services')}}">
+						<span class="fa fa-list-alt">&nbsp;</span> Services
 					</a></li>
-					<li><a class="" href="{{ url('transferts')}}">
-						<span class="fa fa-list-alt">&nbsp;</span>Transferts
+					<li><a class="" href="{{ url('fonctions')}}">
+						<span class="fa fa-list-alt">&nbsp;</span>Fonctions
 					</a></li>
-					>
+					
 				
 				
 					</ul>
@@ -110,7 +110,13 @@
 						<span class="fa fa-id-card">&nbsp;</span> Categorie cas
 					</a></li>
 					
-				
+					<li><a class="" href="{{ url('occupations')}}">
+						<span class="fa fa-list-alt">&nbsp;</span> Occupations
+					</a></li>
+					<li><a class="" href="{{ url('transferts')}}">
+						<span class="fa fa-list-alt">&nbsp;</span>Transferts
+					</a></li>
+					
 				
 					
 					</ul>
