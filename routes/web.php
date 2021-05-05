@@ -26,3 +26,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('users','UsersController');
 });
+
+Route::get('prisonniers','PrisonniersController@index');
+Route::get('prisonniers/create','PrisonniersController@create');
+Route::post('prisonniers','PrisonniersController@store');
+Route::get('prisonniers/edit/{prisonnier}','PrisonniersController@edit');
+Route::put('prisonniers/{prisonnier}','PrisonniersController@update');
+Route::post('prisonniers/destroy/{prisonnier}','PrisonniersController@destroy');
+
