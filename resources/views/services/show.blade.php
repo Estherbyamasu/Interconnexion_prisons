@@ -16,11 +16,11 @@
     <div class="row">
     <div class="col-lg-12">  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-    <div class="modal-header text-center pb-4">
+    {{-- <div class="modal-header text-center pb-4"> --}}
         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     
         <div class="col-md-12">
-            <a href="{{ url('services') }}" class="   btn btn-link"><h1 class="page-header">Fonctions</h1></a>
+            
             <a href="{{ url('services') }}" > <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
             
             <span aria-hidden="true">&times;</span></a>
