@@ -108,8 +108,8 @@
                             
                             <select name="genre" id="genre"  style="width:150px; height:32px ;"
                                 >
-                                <option value="encaissement">Feminin</option>
-                                <option value="decaissement">Masculin</option>
+                                <option value="feminin">Feminin</option>
+                                <option value="masculin">Masculin</option>
                             </select>
                         </div>
                         <div class="col-lg-6">
