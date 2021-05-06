@@ -60,4 +60,11 @@ Route::post('collines/destroy/{colline}','CollinesController@destroy');
 //      'edit', 'update'
 //  ]]);
     
+Route::get('prisons','PrisonsController@index');
+Route::get('prisons/create','PrisonsController@create');
+Route::post('prisons','PrisonsController@store');
+Route::get('prisons/edit/{prison}','PrisonsController@edit');
+Route::get('prisons/show/{prison}','PrisonsController@show');
+Route::put('prisons/{prison}','PrisonsController@update');
+Route::post('prisons/destroy/{prison}','PrisonsController@destroy');
 
