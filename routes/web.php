@@ -29,6 +29,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 
 
 
+
 Route::get('personnels','PersonnelsController@index');
 Route::get('personnels/create','PersonnelsController@create');
 Route::post('personnels','PersonnelsController@store');
@@ -77,5 +78,22 @@ Route::get('prisons/edit/{prison}','PrisonsController@edit');
 Route::get('prisons/show/{prison}','PrisonsController@show');
 Route::put('prisons/{prison}','PrisonsController@update');
 Route::post('prisons/destroy/{prison}','PrisonsController@destroy');
+
+
+Route::get('fonctions','FonctionsController@index');
+Route::get('fonctions/create','FonctionsController@create');
+Route::post('fonctions','FonctionsController@store');
+Route::get('fonctions/edit/{fonction}','FonctionsController@edit');
+Route::put('fonctions/{fonction}','FonctionsController@update');
+Route::post('fonctions/destroy/{fonction}','FonctionsController@destroy');
+
+
+Route::get('services','ServicesController@index');
+Route::get('services/create','ServicesController@create');
+Route::post('services','ServicesController@store');
+Route::get('services/edit/{service}','ServicesController@edit');
+Route::get('services/show/{service}','ServicesController@show');
+Route::put('services/{service}','ServicesController@update');
+Route::post('services/destroy/{service}','ServicesController@destroy');
 
 
