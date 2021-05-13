@@ -25,6 +25,7 @@ class PrisonsController extends Controller
         // ->select('provinces.*','communes.*')
         // ->get();
        $prisons=DB::table('prisons')
+               ->select(DB::raw('prisons.*, collines.nom_colline')) 
                 ->join('collines', 'prisons.colline_id', 'collines.id')
                 // ->join('communes', 'prisons.commune_id', 'communes.id')
                 // ->join('provinces', 'prisons.province_id', 'provinces.id')
@@ -123,7 +124,15 @@ class PrisonsController extends Controller
      */
     public function edit(Prison $prison)
     {
-        //
+        $collines = Colline::all();
+       
+        
+        $prison= Prison::find($prison->id);
+        return view('prisons/edit', [
+         'prison'=>$prison,
+            'collines'=>$collines,
+            
+            ]);
     }
 
     /**
@@ -135,7 +144,30 @@ class PrisonsController extends Controller
      */
     public function update(Request $request, Prison $prison)
     {
-        //
+        $request->validate([
+            'colline_id' => 'required',
+            'type_prison' => 'required',
+            'nbre_piece' => 'required',
+            'adresse_complete' => 'required',
+            'fax' => 'required',
+            'code_prison' => 'required',
+        ]);
+
+        
+        $prison->colline_id = $request->colline_id;
+        $prison->type_prison = $request->type_prison;
+        $prison->nbre_piece = $request->nbre_piece;
+        $prison->adresse_complete = $request->adresse_complete;
+        $prison->fax = $request->fax;
+        $prison->code_prison= $request->code_prison;
+        $prison->save();
+
+        // if($this->etat == 1){
+           
+        // }
+
+
+        return redirect('prisons');
     }
 
     /**
@@ -146,6 +178,8 @@ class PrisonsController extends Controller
      */
     public function destroy(Prison $prison)
     {
-        //
+        $prison= Prison::find($prison->id);
+        $prison->delete();
+        return redirect('prisons');
     }
 }

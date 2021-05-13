@@ -33,7 +33,7 @@
                         <div class="alert alert-success" role="alert">{{ session('success') }}</div>
                     @endif
                         
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class=" glyphicon glyphicon-plus btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Nouveau Prison
 </button>
 
@@ -41,8 +41,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Id</th>
-                                    <th scope="col"> Province</th>
-                                    <th scope="col">Commune</th>
+                                    {{-- <th scope="col"> Province</th>
+                                    <th scope="col">Commune</th> --}}
                                     <th scope="col">Colline</th>
                                     <th scope="col">Type prison</th>
                                     <th scope="col">Nbre_piece</th>
@@ -56,8 +56,8 @@
                                 @foreach($prisons as $prison)
                                 <tr>
                                     <td>{{ $prison->id }}</td>
-                                    <td>{{ $prison->nom_province }}</td>
-                                    <td>{{ $prison->nom_commune }}</td>
+                                    {{-- <td>{{ $prison->nom_province }}</td>
+                                    <td>{{ $prison->nom_commune }}</td> --}}
                                     <td>{{ $prison->nom_colline }}</td>
                                     <td>{{ $prison->type_prison }}</td>
                                     <td>{{ $prison->nbre_piece }}</td>
@@ -145,13 +145,13 @@
                                 <label for="type_prison">type prison</label><br />
                                 <select name="type_prison" id="type_prison">
                             
-                                    <option value="prison_central">prison central</option>
-                                    <option value="prison_provincial">prison provincial</option>
-                                    <option value="prison_communial">prison communial</option>
+                                    <option value="central">prison central</option>
+                                    <option value="provincia">prison provincial</option>
+                                    <option value="communial">prison communial</option>
                                 </select>
                                </div>
-                        </div><br>
                         
+                            </div>
                         <div class="form-group">
                                <label>Nombre piece:</label>
                                <input type="text" name="nbre_piece" class="form-control"
@@ -163,9 +163,9 @@
                                <input type="text" name="adresse_complete" class="form-control"
                                 placeholder="Entrez le adresse " required>
                            </div>
-                        </div>
+                        
                     
-                        <div class="form-row ">
+                        
                                  <div class="form-group">
                                    <label>Fax:</label>
                                    <input type="text" name="fax" class="form-control"
@@ -178,7 +178,7 @@
                                     placeholder="Entrez le code de prison " required>
                                </div>
                         
-                    </div>
+                   
                            <div class="modal-footer">
       <div class="row">
             <div class="text-center mb-3 col-md-6">
