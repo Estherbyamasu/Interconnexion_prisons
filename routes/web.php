@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('users','UsersController');
 });
+
 Route::get('provinces','ProvincesController@index');
 Route::get('provinces/create','ProvincesController@create');
 Route::post('provinces','ProvincesController@store');
@@ -68,3 +69,17 @@ Route::get('prisons/show/{prison}','PrisonsController@show');
 Route::put('prisons/{prison}','PrisonsController@update');
 Route::post('prisons/destroy/{prison}','PrisonsController@destroy');
 
+
+Route::get('prisonniers','PrisonniersController@index');
+Route::get('prisonniers/create','PrisonniersController@create');
+Route::post('prisonniers','PrisonniersController@store');
+Route::get('prisonniers/edit/{prisonnier}','PrisonniersController@edit');
+Route::put('prisonniers/{prisonnier}','PrisonniersController@update');
+Route::post('prisonniers/destroy/{prisonnier}','PrisonniersController@destroy');
+
+Route::get('prisonnier_prisons','Prisonnier_prisonsController@index');
+Route::get('prisonnier_prisons/create','Prisonnier_prisonsController@create');
+Route::post('prisonnier_prisons','Prisonnier_prisonsController@store');
+Route::get('prisonnier_prisons/edit/{prisonnier_prison}','Prisonnier_prisonsController@edit');
+Route::put('prisonnier_prisons/{prisonnier_prison}','Prisonnier_prisonsController@update');
+Route::post('prisonnier_prisons/destroy/{prisonnier_prison}','Prisonnier_prisonsController@destroy');
