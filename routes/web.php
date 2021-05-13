@@ -97,3 +97,9 @@ Route::put('services/{service}','ServicesController@update');
 Route::post('services/destroy/{service}','ServicesController@destroy');
 
 
+Route::get('occupations','OccupationsController@index');
+Route::get('occupations/create','OccupationsController@create');
+Route::post('occupations','OccupationsController@store');
+Route::get('occupations/edit/{occupation}','OccupationsController@edit');
+Route::put('occupations/{occupation}','OccupationsController@update');
+Route::post('occupations/destroy/{occupation}','OccupationsController@destroy');
