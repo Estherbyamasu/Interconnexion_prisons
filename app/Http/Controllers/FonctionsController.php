@@ -43,7 +43,7 @@ class FonctionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Fonction $fonction)
     {
         $request->validate([
             'service_id' => 'required',
@@ -51,7 +51,7 @@ class FonctionsController extends Controller
            
         ]);
 
-        $fonction = new Fonction();
+        
         $fonction->service_id = $request->service_id;
         $fonction->nom_fonction = $request->nom_fonction;
       
@@ -102,8 +102,8 @@ class FonctionsController extends Controller
             
         ]);
 
-        $fonction = new Fonction();
-        $fonction->guichet_id = $request->guichet_id;
+        
+        $fonction->service_id = $request->service_id;
         $fonction->nom_fonction = $request->nom_fonction;
         
         $fonction->save();
