@@ -116,9 +116,11 @@
 					<li><a class="" href="{{ url('transferts')}}">
 						<span class="fa fa-list-alt">&nbsp;</span>Transferts
 					</a></li>
-				
-					
-					</ul>
+
+					<li><a class="" href="{{ url('prisonnier_prisons')}}">
+						<span class="fa fa-list-alt">&nbsp;</span>Prisonnier prisons
+					</a></li>
+				</ul>
 			</li>
 
             <li class="parent "><a data-toggle="collapse" href="#sub-item-4">
