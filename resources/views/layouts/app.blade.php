@@ -64,6 +64,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    <a  class="dropdowm-items" href="{{ route('admin.users.index') }}" >Liste des utilisateurs</a>
                                 </div>
                             </li>
                         @endguest
