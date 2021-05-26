@@ -27,6 +27,14 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
     Route::resource('users','UsersController');
 });
 
+
+Route::get('personnels','PersonnelsController@index');
+Route::get('personnels/create','PersonnelsController@create');
+Route::post('personnels','PersonnelsController@store');
+Route::get('personnels/edit/{personnel}','PersonnelsController@edit');
+Route::put('personnels/{personnel}','PersonnelsController@update');
+Route::post('personnels/destroy/{personnel}','PersonnelsController@destroy');
+
 Route::get('provinces','ProvincesController@index');
 Route::get('provinces/create','ProvincesController@create');
 Route::post('provinces','ProvincesController@store');
@@ -70,6 +78,7 @@ Route::put('prisons/{prison}','PrisonsController@update');
 Route::post('prisons/destroy/{prison}','PrisonsController@destroy');
 
 
+
 Route::get('prisonniers','PrisonniersController@index');
 Route::get('prisonniers/create','PrisonniersController@create');
 Route::post('prisonniers','PrisonniersController@store');
@@ -83,4 +92,29 @@ Route::post('prisonnier_prisons','Prisonnier_prisonsController@store');
 Route::get('prisonnier_prisons/edit/{prisonnier_prison}','Prisonnier_prisonsController@edit');
 Route::put('prisonnier_prisons/{prisonnier_prison}','Prisonnier_prisonsController@update');
 Route::post('prisonnier_prisons/destroy/{prisonnier_prison}','Prisonnier_prisonsController@destroy');
+
+
+Route::get('fonctions','FonctionsController@index');
+Route::get('fonctions/create','FonctionsController@create');
+Route::post('fonctions','FonctionsController@store');
+Route::get('fonctions/edit/{fonction}','FonctionsController@edit');
+Route::put('fonctions/{fonction}','FonctionsController@update');
+Route::post('fonctions/destroy/{fonction}','FonctionsController@destroy');
+
+
+Route::get('services','ServicesController@index');
+Route::get('services/create','ServicesController@create');
+Route::post('services','ServicesController@store');
+Route::get('services/edit/{service}','ServicesController@edit');
+Route::get('services/show/{service}','ServicesController@show');
+Route::put('services/{service}','ServicesController@update');
+Route::post('services/destroy/{service}','ServicesController@destroy');
+
+
+Route::get('occupations','OccupationsController@index');
+Route::get('occupations/create','OccupationsController@create');
+Route::post('occupations','OccupationsController@store');
+Route::get('occupations/edit/{occupation}','OccupationsController@edit');
+Route::put('occupations/{occupation}','OccupationsController@update');
+Route::post('occupations/destroy/{occupation}','OccupationsController@destroy');
 
