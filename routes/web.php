@@ -83,3 +83,4 @@ Route::post('prisonnier_prisons','Prisonnier_prisonsController@store');
 Route::get('prisonnier_prisons/edit/{prisonnier_prison}','Prisonnier_prisonsController@edit');
 Route::put('prisonnier_prisons/{prisonnier_prison}','Prisonnier_prisonsController@update');
 Route::post('prisonnier_prisons/destroy/{prisonnier_prison}','Prisonnier_prisonsController@destroy');
+
