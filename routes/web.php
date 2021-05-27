@@ -118,3 +118,14 @@ Route::get('occupations/edit/{occupation}','OccupationsController@edit');
 Route::put('occupations/{occupation}','OccupationsController@update');
 Route::post('occupations/destroy/{occupation}','OccupationsController@destroy');
 
+Route::get('categories','CategoriesController@index');
+Route::get('categories/create','CategoriesController@create');
+Route::post('categories','CategoriesController@store');
+Route::post('categorie','CategoriesController@storeprod');
+Route::get('categories/edit/{category}','CategoriesController@edit');
+
+Route::get('categories/show/{category}','CategoriesController@show');
+Route::put('categories/{category}','CategoriesController@update');
+
+Route::post('categories/destroy/{category}','CategoriesController@destroy');
+
