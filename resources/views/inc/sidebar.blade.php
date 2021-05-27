@@ -106,7 +106,7 @@
 					<li><a class="" href="{{ url('cas_prisonniers')}}">
 						<span class="fa fa-id-card">&nbsp;</span> Cas prisonniers
 					</a></li>
-					<li><a class="" href="{{ url('categorie_cas')}}">
+					<li><a class="" href="{{ url('categories')}}">
 						<span class="fa fa-id-card">&nbsp;</span> Categorie cas
 					</a></li>
 					
