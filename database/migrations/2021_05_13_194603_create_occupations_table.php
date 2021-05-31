@@ -19,7 +19,7 @@ class CreateOccupationsTable extends Migration
             $table->unsignedBigInteger('personnel_id');
             $table->unsignedBigInteger('fonction_id');
            $table->integer ('etat');
-            $table->string ('code_occupation');
+            $table->string ('code_occupationcode_occupation');
             $table->timestamps();
             $table->foreign('prison_id')
                   ->references('id') 

@@ -123,9 +123,14 @@ Route::get('categories/create','CategoriesController@create');
 Route::post('categories','CategoriesController@store');
 Route::post('categorie','CategoriesController@storeprod');
 Route::get('categories/edit/{category}','CategoriesController@edit');
-
 Route::get('categories/show/{category}','CategoriesController@show');
 Route::put('categories/{category}','CategoriesController@update');
-
 Route::post('categories/destroy/{category}','CategoriesController@destroy');
 
+
+Route::get('cas_prisonniers','Cas_prisonniersController@index');
+Route::get('cas_prisonniers/create','Cas_prisonniersController@create');
+Route::post('cas_prisonniers','Cas_prisonniersController@store');
+Route::get('cas_prisonniers/edit/{cas_prisonnier}','Cas_prisonniersController@edit');
+Route::put('cas_prisonniers/{cas_prisonnier}','Cas_prisonniersController@update');
+Route::post('cas_prisonniers/destroy/{cas_prisonnier}','Cas_prisonniersController@destroy');

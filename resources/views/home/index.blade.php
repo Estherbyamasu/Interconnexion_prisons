@@ -20,71 +20,25 @@
 	<!--/.row-->
 
 	<div class="parallax-container ">
-        <div class="col-lg-9 main-chart">
+      <div class="col-lg-12 main-chart">
         <div class="custom-bar-chart">
-            <ul class="y-axis">
-              <li><span>1000</span></li>
-              <li><span>800</span></li>
-              <li><span>600</span></li>
-              <li><span>400</span></li>
-              <li><span>200</span></li>
-              <li><span>0</span></li>
-            </ul>
+          <ul class="y-axis">
+            <li><span> {{ $max }}</span></li>
+            @for($i = 4; $i >= 0; $i--)
+                <li><span> {{ $max = $max - $moyenne}}</span></li>
+                {{-- <li><span> {{ $max = round(($max / 2), 1)}}</span></li> --}}
+            @endfor
+          </ul>
+          @foreach ($charts as $chart)
             <div class="bar">
-              <div class="title">JAN</div>
-              <div class="value tooltips" data-original-title="8.500" data-toggle="tooltip" data-placement="top">325%</div>
+              <div class="title">{{ $chart['province']}}</div>
+              <div class="value tooltips" data-original-title="{{ $chart['valeur']}}" data-toggle="tooltip" data-placement="top">{{ $chart['pourcentage']}}%</div>
             </div>
-            <div class="bar ">
-              <div class="title">FEB</div>
-              <div class="value tooltips" data-original-title="5.000" data-toggle="tooltip" data-placement="top">50%</div>
-            </div>
-            <div class="bar ">
-              <div class="title">MAR</div>
-              <div class="value tooltips" data-original-title="6.000" data-toggle="tooltip" data-placement="top">60%</div>
-            </div>
-            <div class="bar ">
-              <div class="title">APR</div>
-              <div class="value tooltips" data-original-title="4.500" data-toggle="tooltip" data-placement="top">45%</div>
-            </div>
-            <div class="bar">
-              <div class="title">MAY</div>
-              <div class="value tooltips" data-original-title="3.200" data-toggle="tooltip" data-placement="top">32%</div>
-            </div>
-            <div class="bar ">
-              <div class="title">JUN</div>
-              <div class="value tooltips" data-original-title="6.200" data-toggle="tooltip" data-placement="top">62%</div>
-            </div>
-            <div class="bar">
-              <div class="title">JUL</div>
-              <div class="value tooltips" data-original-title="7.500" data-toggle="tooltip" data-placement="top">75%</div>
-            </div>
-          </div>
-		
-		
-		
-		
-	     
-		<!--/.row-->
-	</div>
-	
-            <!-- /row -->
-           
-              <!-- /col-md-4-->
-              <!-- DIRECT MESSAGE PANEL -->
-             
-         
-         
-              
-              <!-- /col-md-4 -->
+          @endforeach
           
-            <!-- /row -->
-           
-              <!-- /col-md-4 -->
-              <!--  PROFILE 02 PANEL -->
-             
-              <!--/ col-md-4 -->
-             
-              <!-- /col-md-4 -->
-            </div>
+        </div>
+      </div>
+	  </div> 
+  </div>
 </div>
 @endsection
