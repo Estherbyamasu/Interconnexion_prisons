@@ -31,7 +31,7 @@
                     <div class="row">
      
        
-                        <a href="cas_prisonniers/create/"  class="glyphicon glyphicon-edit   btn btn-info">Nouveau Cas</a>
+                        <a href="cas_prisonniers/create/"  class="glyphicon glyphicon-plus   btn btn-info">Nouveau Cas</a>
                         <table  id="example1" class="table table-bordered table-hover table-striped">
                        
                             <thead>
@@ -42,7 +42,7 @@
                                 <th>Pri Prison</th>
                                 <th>Personnel</th>
                                 <th>Fonction</th>
-                                <th>Occupation</th>
+                                <th>Code occup</th>
                                 <th>Lieu passation</th>
                                 <th>Date</th>
                                 <th>Heure</th>
