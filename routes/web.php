@@ -134,3 +134,4 @@ Route::post('cas_prisonniers','Cas_prisonniersController@store');
 Route::get('cas_prisonniers/edit/{cas_prisonnier}','Cas_prisonniersController@edit');
 Route::put('cas_prisonniers/{cas_prisonnier}','Cas_prisonniersController@update');
 Route::post('cas_prisonniers/destroy/{cas_prisonnier}','Cas_prisonniersController@destroy');
+Route::post('search','Cas_prisonniersController@search');

@@ -52,7 +52,82 @@ class Cas_prisonniersController extends Controller
         ]);
     }
 
-    
+    public function search(Request $request)
+    {
+        $prisonniers = Prisonnier::all();
+        $personnels = Personnel::all();
+        $fonctions = Fonction::all();
+        $prisonnier_prisons = Prisonnier_prison::all();
+        $occupations = Occupation::all();
+        $categories = Category::all();
+
+        $date_debut=$request->date_debut;
+         $date_fin=$request->date_fin;
+        $cas_prisonniers = DB::table('cas_prisonniers')
+            ->select(DB::raw('cas_prisonniers.*,categories.nom_cat_cas, prisonniers.nom_prisonnier,
+             prisonnier_prisons.etat,personnels.nom_personnel,fonctions.nom_fonction,occupations.code_occupation')) 
+            ->join('prisonnier_prisons', 'cas_prisonniers.prisonnier_prison_id', '=', 'prisonnier_prisons.id')
+            ->join('prisonniers', 'prisonnier_prisons.prisonnier_id', '=', 'prisonniers.id')
+            ->join('occupations', 'cas_prisonniers.occupation_id', '=', 'occupations.id')
+            ->join('personnels', 'occupations.personnel_id', '=', 'personnels.id')
+            ->join('fonctions', 'occupations.fonction_id', '=', 'fonctions.id')
+            ->join('categories', 'cas_prisonniers.category_id', '=', 'categories.id')
+            ->wherebetween('date_cas',[$date_debut, $date_fin])
+           ->get();
+       $prisonniers=DB::table('prisonnier_prisons')
+                ->join('prisonniers', 'prisonnier_prisons.prisonnier_id', '=', 'prisonniers.id')
+                ->select('prisonniers.*','prisonnier_prisons.*')
+                ->where('prisonnier_prisons.id')
+                // ->wherebetween('date_cas',[$date_debut, $date_fin])
+                ->get();
+       $personnels =  DB::table('occupations')
+                    ->join('personnels', 'occupations.personnel_id', '=', 'personnels.id')
+                    ->join('fonctions', 'occupations.fonction_id', '=', 'fonctions.id')
+                    ->select( 'personnels.*','fonctions.*','occupations.*')
+                    ->where('occupations.id')
+                    // ->wherebetween('date_cas',[$date_debut, $date_fin])
+                     ->get();
+        return view('cas_prisonniers.show',compact('cas_prisonniers'),[
+            'cas_prisonniers' => $cas_prisonniers,
+            'categories' => $categories,
+            'prisonnier_prisons'=>$prisonnier_prisons,
+            'occupations'=>$occupations,
+            'personnels'=>$personnels,
+            'prisonniers'=>$prisonniers,
+            'fonctions'=>$fonctions,
+        ]);
+        // $products = Product::all();
+        // $clients = Client::all();
+        // $serveurs = Serveur::all();
+        // $users = User::all();
+
+        // $date_debut=$request->date_debut;
+        // $date_fin=$request->date_fin;
+        // $factures=  DB::table('factures')
+        //     ->join('clients', 'factures.client_id', '=', 'clients.id')
+        //     ->join('serveurs', 'factures.serveur_id', '=', 'serveurs.id')
+        //     ->join('users', 'factures.user_id', '=', 'users.id')
+        //     ->join('products', 'factures.product_id', '=', 'products.id')
+        //     ->select('clients.*', 'serveurs.*', 'users.*','factures.*','products.*')
+        //     ->wherebetween('date_facture',[$date_debut, $date_fin])
+        //  ->get();
+        //  $total = DB::table('factures')
+        //         ->join('clients', 'factures.client_id', '=', 'clients.id')
+        //         ->join('serveurs', 'factures.serveur_id', '=', 'serveurs.id')
+        //         ->join('users', 'factures.user_id', '=', 'users.id')
+        //         ->join('products', 'factures.product_id', '=', 'products.id')
+        //         ->select(DB::raw('sum(factures.montant) as total'))
+        //         ->wherebetween('date_facture',[$date_debut, $date_fin])
+        //         ->first();
+        //  return view('factures.show',compact('factures'),[
+            
+        //     'clients' => $clients,
+        //     'serveurs' => $serveurs,
+        //     'users' => $users,
+        //     'products' => $products,
+        //     'total'=>$total->total
+        // ]);
+    }
     public function create()
     {
         //

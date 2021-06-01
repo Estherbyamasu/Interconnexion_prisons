@@ -31,7 +31,29 @@
                     <div class="row">
      
        
-                        <a href="cas_prisonniers/create/"  class="glyphicon glyphicon-plus   btn btn-info">Nouveau Cas</a>
+                        <a href="cas_prisonniers/create/"  class="glyphicon glyphicon-plus   btn btn-success">Nouveau Cas prisonnier</a>
+
+                        <form action="{{url('search')}}" method="POST">
+                            @csrf
+                             <div class="row pb-2">
+                                <div class="col-md-4">
+                                     <input type="datetime-local" class="form-control" name="date_debut" value="{{ old('date_debut') }}" placeholder="date_debut" > 
+                                     @error('date_debut')
+                                        <div class="alert alert-danger">{{$message}}</div>
+                                        @enderror
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="datetime-local" class="form-control" name="date_fin" value="{{ old('date_fin') }}" placeholder="date_fin" >
+                                    @error('date_fin')
+                                        <div class="alert alert-danger">{{$message}}</div>
+                                        @enderror
+                                 </div>
+                                 <div class="col-md-4">
+                                    <input type="submit" class="btn btn-warning" value="Rechercher" placeholder="search" >
+                                </div>
+                             </div>
+                            </form>
+
                         <table  id="example1" class="table table-bordered table-hover table-striped">
                        
                             <thead>
